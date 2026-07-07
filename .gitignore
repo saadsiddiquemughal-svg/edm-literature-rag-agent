@@ -1,0 +1,5 @@
+data/papers/
+data/index/
+__pycache__/
+*.pyc
+.venv/

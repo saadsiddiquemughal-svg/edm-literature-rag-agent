@@ -1,0 +1,7 @@
+pdfplumber
+scikit-learn
+numpy
+# optional, for real semantic embeddings once you have internet access:
+# sentence-transformers
+# optional, for LLM-synthesized answers:
+# anthropic
