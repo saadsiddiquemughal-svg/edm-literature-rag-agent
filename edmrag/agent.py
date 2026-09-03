@@ -11,7 +11,7 @@ means I actually understand every step instead of trusting a framework's
 defaults.
 
 Synthesis has two modes:
-  - LLM mode: if ANTHROPIC_API_KEY is set, ask an LLM to write the answer
+  - LLM mode:  use ollama LLM to write the answer
     from the retrieved passages, citing paper titles/arXiv IDs.
   - Extractive fallback (default, no API key needed): just returns the
     top-ranked passages grouped by paper, so you get citations without
@@ -67,7 +67,7 @@ def extractive_answer(question, hits):
 
 
 def ollama_answer(question, hits, model="deepseek-r1:1.5b"):
-    """pllama answer synthesis backend - local, free, needs ollama running.
+    """ollama answer synthesis backend - local, free, needs ollama running.
     If you want to use a different LLM backend, just implement a function"""
 
     context = "\n\n".join(

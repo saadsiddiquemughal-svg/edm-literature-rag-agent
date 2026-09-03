@@ -1,14 +1,3 @@
-"""
-Retrieval backend. Default is TF-IDF + cosine similarity - no model
-download needed, works offline, good enough to prove the pipeline works.
-
-For real use I'd swap this for sentence-transformer embeddings (see
-EmbeddingRetriever below) - better at matching a question phrased
-differently than the paper's wording, which TF-IDF is bad at since it's
-just word overlap. Left both in so it's a one-line swap depending on
-whether you've got internet access to pull the model from huggingface.
-"""
-
 import json
 import pickle
 from pathlib import Path
@@ -61,14 +50,6 @@ class TfidfRetriever:
 
 
 class EmbeddingRetriever:
-    """
-    Swap-in replacement using real sentence embeddings instead of TF-IDF.
-    Needs `pip install sentence-transformers` and internet access to pull
-    the model the first time - didn't have that available while building
-    this, so it's untested here, but the interface matches TfidfRetriever
-    so agent.py doesn't need to know or care which one it's talking to.
-    """
-
     def __init__(self, model_name="all-MiniLM-L6-v2"):
         from sentence_transformers import SentenceTransformer
         self.model = SentenceTransformer(model_name)
