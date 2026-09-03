@@ -1,9 +1,3 @@
-"""
-Builds the retrieval index from data/index/chunks.json (produced by
-extract_text.py). Separate from extraction so you can rebuild the index
-(e.g. switch retriever backend) without re-parsing PDFs every time.
-"""
-
 import sys
 import json
 from pathlib import Path
